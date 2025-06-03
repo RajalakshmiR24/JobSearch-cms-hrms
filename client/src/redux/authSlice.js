@@ -1,7 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axiosInstance from "../utils/axiosInstance"; // Adjust the import path as necessary
+import { createSlice, createAsyncThunk } from "/node_modules/.vite/deps/@reduxjs_toolkit.js?v=78e4f4d3";
+import axiosInstance from "../utils/axiosInstance"; 
 
-const BASE_URL = process.env.REACT_APP_CMS_SERVER;
+
+const BASE_URL = "http://localhost:5001" || window.location.origin;
 
 export const loginWithGoogle = createAsyncThunk("auth/loginWithGoogle", async () => {
   window.open(`${BASE_URL}/api/cms/auth/google/callback`, "_self");
@@ -38,12 +39,11 @@ export const fetchUserInfo = createAsyncThunk(
   }
 );
 
-
 const authSlice = createSlice({
   name: "auth",
   initialState: {
     isAuthenticated: false,
-    userData: null,  // Using a single object to store all user-related data
+    userData: null,
     loading: false,
     error: null,
   },

@@ -1,7 +1,6 @@
-import axios from 'axios';
-
+import axios from "axios";
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_CMS_SERVER || window.location.origin,
+  baseURL: "http://localhost:5001" || window.location.origin,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
@@ -20,7 +19,5 @@ axiosInstance.interceptors.request.use(
     return Promise.reject(error);
   }
 );
-
-
 
 export default axiosInstance;

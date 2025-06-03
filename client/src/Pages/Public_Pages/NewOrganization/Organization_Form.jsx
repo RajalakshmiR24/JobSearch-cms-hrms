@@ -3,7 +3,7 @@ import axiosInstance from '../../../utils/axiosInstance';
 import { validateOrganizationForm } from '../../../utils/validation';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { loginWithGoogle } from '../../../redux/authSlice'; // Import the loginWithGoogle action
+import { loginWithGoogle } from '../../../redux/authSlice'; 
 
 const Organization_Form = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ const Organization_Form = () => {
   const [createSuccess, setCreateSuccess] = useState('');
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Access the dispatch function
+  const dispatch = useDispatch(); 
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -89,7 +89,7 @@ const Organization_Form = () => {
           organization_logo: '',
         });
         navigate('/cms/org');
-        dispatch(loginWithGoogle()); // Replace handleLogin with the dispatch call to loginWithGoogle
+        dispatch(loginWithGoogle()); 
       }
     } catch (err) {
       setCreateError('Error occurred while creating HR. Please try again later.');

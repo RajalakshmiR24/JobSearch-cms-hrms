@@ -11,7 +11,7 @@ import {
   FaUserTie
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../utils/axiosInstance"; // Adjust this path if needed
+import axiosInstance from "../../utils/axiosInstance"; 
 
 const ExploreJob = () => {
   const navigate = useNavigate();
